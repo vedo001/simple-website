@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เฉลยยังไม่ถึงเวลา!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            color: #ff4500;
+        }
+        p {
+            color: #555;
+            font-size: 1.2em;
+        }
+        img {
+            margin-top: 20px;
+            max-width: 300px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e03e00;
+        }
+    </style>
+</head>
+<body>
+    <h1>นั้นแน่~~</h1>
+    <p>ขี้เผือกจริง ๆ เลยนะคุณเนี่ยยย<br>แต่มันยังไม่ถึงเวลาเฉลยนะ!</p>
+    <img src="funny.gif" alt="GIF ตลก ๆ">
+
+    <!-- เพิ่มปุ่ม -->
+    <button onclick="playAudio()">คลิกที่นี่เพื่อฟังเสียง</button>
+
+    <audio id="background-audio">
+        <source src="funny.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // ฟังก์ชันให้เล่นเสียง
+        function playAudio() {
+            const audio = document.getElementById("background-audio");
+            audio.volume = 1.0; // เสียงดังสูงสุด
+            audio.play().catch(error => {
+                console.error("ไม่สามารถเล่นเสียงได้: ", error);
+            });
+        }
+    </script>
+</body>
+</html>
